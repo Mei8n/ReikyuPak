@@ -1,0 +1,421 @@
+{
+  "RK1800BcOff": {
+    "category": "neutral",
+    "sounds": [
+      "train/RK1800BcOff"
+    ]
+ },
+
+  "RK1800BcOn": {
+    "category": "neutral",
+    "sounds": [
+      "train/RK1800BcOn"
+    ]
+ },
+
+  "RK1800Horn_A": {
+    "category": "neutral",
+    "sounds": [
+      "train/RK1800Horn_A"
+    ]
+ },
+
+  "RK1800Horn_B": {
+    "category": "neutral",
+    "sounds": [
+      "train/RK1800Horn_B"
+    ]
+ },
+
+  "RK1800EB": {
+    "category": "neutral",
+    "sounds": [
+      "train/RK1800EB"
+    ]
+ },
+
+  "2000_0": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000_0"
+    ]
+ },
+
+  "2000_0d": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000_0d"
+    ]
+ },
+
+  "2000_1": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000_1"
+    ]
+ },
+
+  "2000_1d": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000_1d"
+    ]
+ },
+
+  "2000_2": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000_2"
+    ]
+ },
+
+  "2000Brake1": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000Brake1"
+    ]
+ },
+
+  "2000CPS": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000CPS"
+    ]
+ },
+
+  "2000CPE": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000CPE"
+    ]
+ },
+
+  "2000CPL": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000CPL"
+    ]
+ },
+
+  "2000DoorOpn": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000DoorOpn"
+    ]
+ },
+
+  "2000DoorCls": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000DoorCls"
+    ]
+ },
+
+  "2000Sq": {
+    "category": "neutral",
+    "sounds": [
+      "train/2000Sq"
+    ]
+ },
+
+
+
+  "Pattern_Action10": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action10"
+    ]
+ },
+
+  "Pattern_Action11": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action11"
+    ]
+ },
+
+  "Pattern_Action12": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action12"
+    ]
+ },
+
+  "Pattern_Action13": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action13"
+    ]
+ },
+
+  "Pattern_Action14": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action14"
+    ]
+ },
+
+  "Pattern_Action15": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action15"
+    ]
+ },
+
+  "Pattern_Action16": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action16"
+    ]
+ },
+
+  "Pattern_Action17": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action17"
+    ]
+ },
+
+  "Pattern_Action18": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action18"
+    ]
+ },
+
+  "Pattern_Action19": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action19"
+    ]
+ },
+
+  "Pattern_Action20": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action20"
+    ]
+ },
+
+  "Pattern_Action21": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action21"
+    ]
+ },
+
+  "Pattern_Action22": {
+    "category": "neutral",
+    "sounds": [
+      "train/Pattern_Action22"
+    ]
+ },
+
+
+  "RKATS_Pattern_Arr": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKATS_Pattern_Arr"
+    ]
+ },
+
+  "RKATS_Pattern_Emr": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKATS_Pattern_Emr"
+    ]
+ },
+
+  "RKATS_Pattern_Emr2": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKATS_Pattern_Emr2"
+    ]
+ },
+
+  "RKATS_Off": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKATS_Off"
+    ]
+ },
+
+  "RKATS_S_Alert_Cfm": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKATS_S_Alert_Cfm"
+    ]
+ },
+  "RKATS_S_Alert_Emr": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKATS_S_Alert_Emr"
+    ]
+ },
+
+  "ATS_ORP": {
+    "category": "neutral",
+    "sounds": [
+      "train/ATS_ORP"
+    ]
+ },
+
+  "ATS_Stopping": {
+    "category": "neutral",
+    "sounds": [
+      "train/ATS_Stopping"
+    ]
+ },
+
+
+
+  "RKEmrHorn_A": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKEmrHorn_A"
+    ]
+ },
+
+  "RKEmrHorn_B": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKEmrHorn_B"
+    ]
+ },
+
+  "RKDoorAnnounce": {
+    "category": "neutral",
+    "sounds": [
+      "train/RKDoorAnnounce"
+    ]
+ },
+
+  "KRWEHorn1": {
+    "category": "neutral",
+    "sounds": [
+      "train/KRWEHorn1"
+    ]
+ },
+
+  "KRWEHorn2": {
+    "category": "neutral",
+    "sounds": [
+      "train/KRWEHorn2"
+    ]
+ },
+
+
+
+  "ED60BlowerLoop": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60BlowerLoop"
+    ]
+ },
+
+  "ED60BlowerOn": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60BlowerOn"
+    ]
+ },
+
+  "ED60Brake": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60Brake"
+    ]
+ },
+
+  "ED60EB": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60EB"
+    ]
+ },
+
+  "ED60Horn1": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60Horn1"
+    ]
+ },
+
+  "ED60Horn2": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60Horn2"
+    ]
+ },
+
+  "ED60PantaDown": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60PantaDown"
+    ]
+ },
+
+  "ED60PantaUp": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60PantaUp"
+    ]
+ },
+
+  "ED60Stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60Stop"
+    ]
+ },
+
+  "ED60CP_On": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60CP_On"
+    ]
+ },
+
+  "ED60CP_Loop": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60CP_Loop"
+    ]
+ },
+
+  "ED60CP_Off": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60CP_Off"
+    ]
+ },
+
+  "ED60Squeak": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60Squeak"
+    ]
+ },
+
+  "ED60BreakerOn": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60BreakerOn"
+    ]
+ },
+
+  "ED60BreakerOff": {
+    "category": "neutral",
+    "sounds": [
+      "train/ED60BreakerOff"
+    ]
+ },
+
+  "KRWnull": {
+    "category": "neutral",
+    "sounds": [
+      "train/KRWnull"
+    ]
+ }
+
+}
