@@ -1,4 +1,4 @@
-# KRWPack
+# ReikyuPak
 
 [![MCVer](https://img.shields.io/badge/Minecraft-1.7.10-brightgreen)](https://www.minecraft.net/)
 [![ForgeVer](https://img.shields.io/badge/Forge-10.13.4.1614-important)](https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html)
@@ -8,23 +8,25 @@
 [![LatestRelease](https://img.shields.io/github/v/release/Mei8n/ReikyuPak)](https://github.com/Mei8n/ReikyuPak/releases/latest)
 [![LatestPreRelease](https://img.shields.io/github/v/release/Mei8n/ReikyuPak?include_prereleases)](https://github.com/Mei8n/ReikyuPak/releases)
 
-Ver:1.1 ED60形(仮Ver.を追加)
+Ver:0.1 追加
 
 ## Download
 
-Latest Release [Download](https://github.com/Mei8n/KRWPack/releases/latest)  
-Latest Pre-Release [Download](https://github.com/Mei8n/KRWPack/releases)
+Latest Release [Download](https://github.com/Mei8n/ReikyuPak/releases/latest)
+Latest Pre-Release [Download](https://github.com/Mei8n/ReikyuPak/releases)
 
 ## ATS仕様書
 
 Hキー(仮) 保安電源投入\
-Jキー(仮) 保安電源切(構内走行時、無閉塞運転時等に使用)
+Jキー(仮) 保安電源切(構内走行時、無閉塞運転時等に使用)\
+キー(仮) S警報確認扱い\
+キー(仮) S警報消音(停車後に扱うこと)
 
-### ATS-MK
-曲線制限+5km/h以内 ブレーキ無し、予告鳴動\
-曲線制限+5km/h以上10km/h以内 常用ブレーキ(4段)動作 動作音鳴動\
+### ATS-RK
+曲線制限+5km/h以上10km/h以内 ブレーキ無し、予告鳴動\
+曲線制限+10km/h以上15km/h以内 常用ブレーキ(4段)動作 動作音鳴動\
 曲線制限+10km/h以上15km/h以内 常用ブレーキ(7段)動作 動作音鳴動\
-曲線制限+15km/h以上 非常ブレーキ動作 動作音鳴動\
+曲線制限+20km/h以上 非常ブレーキ動作 動作音鳴動\
 
 現示変化時音鳴動
 
@@ -44,6 +46,6 @@ Jキー(仮) 保安電源切(構内走行時、無閉塞運転時等に使用)
 17 100km/h\
 18 110km/h\
 19 120km/h\
-20 ロング警報\
+20 S警報\
 21 ORP予告\
 22 絶対停止信号
