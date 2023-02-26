@@ -416,6 +416,206 @@
     "sounds": [
       "train/KRWnull"
     ]
+ },
+
+  "RKAN_1pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_1pass"
+    ]
+ },
+  "RKAN_1stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_1stop"
+    ]
+ },
+  "RKAN_2pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_2pass"
+    ]
+ },
+  "RKAN_2stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_2stop"
+    ]
+ },
+  "RKAN_3pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_3pass"
+    ]
+ },
+  "RKAN_3stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_3stop"
+    ]
+ },
+  "RKAN_4pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_4pass"
+    ]
+ },
+  "RKAN_4stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_4stop"
+    ]
+ },
+  "RKAN_5pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_5pass"
+    ]
+ },
+  "RKAN_5stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_5stop"
+    ]
+ },
+  "RKAN_6pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_6pass"
+    ]
+ },
+  "RKAN_6stop": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_6stop"
+    ]
+ },
+  "RKAN_ArPa_Arr": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_ArPa_Arr"
+    ]
+ },
+  "RKAN_ArPa_DensyaArr": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_ArPa_DensyaArr"
+    ]
+ },
+  "RKAN_ArPa_RessyaArr": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_ArPa_RessyaArr"
+    ]
+ },
+  "RKAN_ArPa_Pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_ArPa_Pass"
+    ]
+ },
+  "RKAN_TypeLoc": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_TypeLoc"
+    ]
+ },
+  "RKAN_TypeSemiEx": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_TypeSemiEx"
+    ]
+ },
+  "RKAN_TypeExp": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_TypeExp"
+    ]
+ },
+  "RKAN_TypeRapEx": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_TypeRapEx"
+    ]
+ },
+  "RKAN_TypeLimEx": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_TypeLimEx"
+    ]
+ },
+  "RKAN_DistAkemi": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistAkemi"
+    ]
+ },
+  "RKAN_DistKeiyo": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistKeiyo"
+    ]
+ },
+  "RKAN_DistNakashin": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistNakashin"
+    ]
+ },
+  "RKAN_DistSakaki": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistSakaki"
+    ]
+ },
+  "RKAN_DistSanto": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistSanto"
+    ]
+ },
+  "RKAN_DistShito": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistShito"
+    ]
+ },
+  "RKAN_DistYuino": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistYuino"
+    ]
+ },
+  "RKAN_DistKitaAirport": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistKitaAirport"
+    ]
+ },
+  "RKAN_DistKitaIchi": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistKitaIchi"
+    ]
+ },
+  "RKAN_DistKitaIwae": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistKitaIwae"
+    ]
+ },
+  "RKAN_DistKitaTsutte": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_DistKitaTsutte"
+    ]
+ },
+  "RKAN_Yellowline": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_Yellowline"
+    ]
  }
+
 
 }
