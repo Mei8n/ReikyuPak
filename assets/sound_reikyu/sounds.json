@@ -615,6 +615,19 @@
     "sounds": [
       "train/announce/RKAN_Yellowline"
     ]
+ },
+
+  "RKAN_Melo_Arr": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_Melo_Arr"
+    ]
+ },
+  "RKAN_Melo_Pass": {
+    "category": "neutral",
+    "sounds": [
+      "train/announce/RKAN_Melo_Pass"
+    ]
  }
 
 
