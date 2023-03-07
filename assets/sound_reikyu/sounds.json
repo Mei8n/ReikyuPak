@@ -628,7 +628,33 @@
     "sounds": [
       "train/announce/RKAN_Melo_Pass"
     ]
- }
+ },
 
+
+
+  "RKM_Precious": {
+    "category": "neutral",
+    "sounds": [
+      "train/melody/RKM_Precious"
+    ]
+ },
+  "RKM_Susanna": {
+    "category": "neutral",
+    "sounds": [
+      "train/melody/RKM_Susanna"
+    ]
+ },
+  "RKM_UminokoA": {
+    "category": "neutral",
+    "sounds": [
+      "train/melody/RKM_UminokoA"
+    ]
+ },
+  "RKM_UminokoB": {
+    "category": "neutral",
+    "sounds": [
+      "train/melody/RKM_UminokoB"
+    ]
+ }
 
 }
