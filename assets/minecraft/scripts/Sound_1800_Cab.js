@@ -11,13 +11,14 @@ function onUpdate(su) {
 	var signal = su.getEntity().getSignal();
 	var isControlCar = su.getEntity().isControlCar();
 	var dataMap = entity.getResourceState().getDataMap();
+	var jointRailStatus = dataMap.getInt("jointRailStatus");
+	var isPointStatus = dataMap.getInt("isPointStatus");
 	var speed = su.getSpeed();
 	var notch = su.getNotch();
 	var soundAddress = 'sound_reikyu';
 
 	//ControlCarの時
 	if (isControlCar) {
-		
 		var isOver5 = dataMap.getBoolean('isOver5');
 		var isOver10 = dataMap.getBoolean('isOver10');
 		var isPushHorn = dataMap.getBoolean("isPushHorn");
@@ -58,7 +59,7 @@ function onUpdate(su) {
 		} else {
 			su.stopSound(soundAddress, 'Pattern_Action12');
 		}
-			   
+
 		if (signal == 13) {
 			su.playSound(soundAddress, 'Pattern_Action13', 1, 1, false);
 		} else {
@@ -83,7 +84,7 @@ function onUpdate(su) {
 			su.stopSound(soundAddress, 'Pattern_Action16');
 		}
 
-		if(signal == 17) {
+		if (signal == 17) {
 			su.playSound(soundAddress, 'Pattern_Action17', 1, 1, false);
 		} else {
 			su.stopSound(soundAddress, 'Pattern_Action17');
@@ -159,12 +160,12 @@ function onUpdate(su) {
 	}
 
 
-//CP音
-var CpName = "RTMLib.CP.CPloop16";
-var CpStartName = "RTMLib.CP.CPstart16";
-var CpEndName = "RTMLib.CP.CPend16";
+	//CP音
+	var CpName = "RTMLib.CP.CPloop16";
+	var CpStartName = "RTMLib.CP.CPstart16";
+	var CpEndName = "RTMLib.CP.CPend16";
 
-PlayCompressor(su, CpName, CpStartName, CpEndName);
+	PlayCompressor(su, CpName, CpStartName, CpEndName);
 	//loop
 	su.playSound('sound_mhnlib', 'RTMLib.loop.loop_16', 1.0, 1.0);
 
@@ -178,18 +179,18 @@ PlayCompressor(su, CpName, CpStartName, CpEndName);
 	//Shock_On
 	if (speed > 0 && speed < 90 && notch > 0) {
 		su.playSound('sound_mhnlib', 'RTMLib.Sounds.201_Shock_Uniton', 1.0, 1.0, false);
-	} else{
+	} else {
 		su.stopSound('sound_mhnlib', 'RTMLib.Sounds.201_Shock_Uniton');
 	}
 
 	//Shock_Off
 	if (speed > 0 && speed < 90 && notch === 0) {
 		su.playSound('sound_mhnlib', 'RTMLib.Sounds.201_Shock_Unitoff', 1.0, 1.0, false);
-	} else{
+	} else {
 		su.stopSound('sound_mhnlib', 'RTMLib.Sounds.201_Shock_Unitoff');
 	}
 
-	if (speed > 0.01){
+	if (speed > 0.01) {
 
 		//run5
 		if (speed > 0 && speed < 90) {
@@ -202,7 +203,7 @@ PlayCompressor(su, CpName, CpStartName, CpEndName);
 			} else {
 				vol5 = 1;
 			}
-			
+
 			su.playSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_2', vol5, pit5);
 		} else {
 			su.stopSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_2');
@@ -214,8 +215,7 @@ PlayCompressor(su, CpName, CpStartName, CpEndName);
 			var vol6 = 1.0;
 			if (speed < 70) vol6 = fadeCon(70, 0.0, 90, 1.0, su);
 			su.playSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_3', vol6, pit6);
-		}
-		else{
+		} else {
 			su.stopSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_3');
 		}
 	}
@@ -226,31 +226,154 @@ PlayCompressor(su, CpName, CpStartName, CpEndName);
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_3');
 	}
 
-	//Run30km
-	if(speed>0.1&&speed<60){
-		var pit11 = fadeCon(0, 0.5, 30, 1.0, su),
-				vol11 = 1.0;
-		if(speed<10) vol11 = fadeCon(0, 0.0, 10, 1.0, su);
-		if(speed>40) vol11 = fadeCon(40, 1.0, 60, 0.0, su);
-		su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2', vol11, pit11);
-	}
-	else{
-	su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2');
-	}
-
 	if (speed > 0.01) {
+		if (isPointStatus == 1) {
+			if (speed > 0.1 && speed < 40) {
+				var pitPoint30 = fadeCon(0, 0.8, 40, 1.3, su),
+					volPoint30 = 1.0;
+				if (speed < 10) volPoint30 = fadeCon(0, 0.5, 10, 1.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Point30km', pitPoint30, volPoint30, false);
+			}
 
-		//Run60km
-		if (speed > 40 && speed < 90 && !su.inTunnel()) {
-			var pit60km = fadeCon(60, 1.0, 90, 1.5, su);
-			var vol60km = 1.0;
-			if (speed < 50) vol60km = fadeCon(40, 0.0, 50, 1.0, su);
-			if (speed > 70) vol60km = fadeCon(70, 1.0, 90, 0.0, su);
-			su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2', vol60km, pit60km);
-		} else {
-			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2');
+			if (speed > 40 && speed < 90) {
+				var pitPoint60 = fadeCon(40, 0.7, 90, 1.3, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Point60km', pitPoint60, 1.0, false);
+			}
+
+			if (speed > 90 && speed < 165) {
+				var pitPoint120 = fadeCon(90, 0.8, 165, 1.5, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Point120km', pitPoint120, 1.0, false);
+			}
 		}
 
+		if (isPointStatus == 0) {
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Point30km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Point60km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Point120km');
+		}
+
+		if (jointRailStatus == 1) {
+			//Run30km_Longrail
+			if (speed > 0.1 && speed < 60) {
+				var pitLong30 = fadeCon(0, 0.8, 60, 1.2, su),
+					volLong30 = 1.0;
+				if (speed < 10) volLong30 = fadeCon(0, 0.0, 10, 1.0, su);
+				if (speed > 40) volLong30 = fadeCon(40, 1.0, 60, 0.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Long30km', volLong30, pitLong30);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long30km');
+			}
+
+			//Run60km_Longrail
+			if (speed > 40 && speed < 90 && !su.inTunnel()) {
+				var pitLong60 = fadeCon(40, 0.8, 90, 1.1, su),
+					volLong60 = 1.0;
+				if (speed < 50) volLong60 = fadeCon(40, 0.0, 50, 1.0, su);
+				if (speed > 70) volLong60 = fadeCon(70, 1.0, 90, 0.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Long60km', volLong60, pitLong60);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long60km');
+			}
+
+			//Run120km_Longrail
+			if (speed > 70 && speed < 165 && !su.inTunnel()) {
+				var pitLong120 = fadeCon(70, 0.8, 165, 1.3, su),
+					volLong120 = 1.0;
+				if (speed < 80) volLong120 = fadeCon(70, 0.0, 80, 1.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Long120km', volLong120, pitLong120);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long120km');
+			}
+
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge30km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge60km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge120km');
+
+		} else if (jointRailStatus == 2) {
+			//Run30km_Bridge
+			if (speed > 0.1 && speed < 60) {
+				var pitBridge30km = fadeCon(0, 0.5, 30, 1.0, su),
+					volBridge30km = 1.0;
+				if (speed < 10) volBridge30km = fadeCon(0, 0.0, 10, 1.0, su);
+				if (speed > 40) volBridge30km = fadeCon(40, 1.0, 60, 0.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge30km', volBridge30km, pitBridge30km);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge30km');
+			}
+
+			//Run60km_Bridge
+			if (speed > 40 && speed < 90 && !su.inTunnel()) {
+				var pitBridge60km = fadeCon(40, 0.7, 90, 1.3, su);
+				var volBridge60km = 1.0;
+				if (speed < 50) volBridge60km = fadeCon(40, 0.0, 50, 1.0, su);
+				if (speed > 70) volBridge60km = fadeCon(70, 1.0, 90, 0.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge60km', volBridge60km, pitBridge60km);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge60km');
+			}
+
+			//Run120km_Bridge
+			if (speed > 70 && speed < 165 && !su.inTunnel()) {
+				var pitBridge120km = fadeCon(70, 0.7, 165, 1.6, su);
+				var volBridge120km = 1.0;
+				if (speed < 80) volBridge120km = fadeCon(70, 0.0, 80, 1.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge120km', volBridge120km, pitBridge120km);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge120km');
+			}
+
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long30km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long60km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long120km');
+
+		} else {
+
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long30km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long60km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long120km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge30km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge60km');
+			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge120km');
+
+			//Run30km
+			if (speed > 0.1 && speed < 60) {
+				var pit30km = fadeCon(0, 0.5, 30, 1.0, su),
+					vol30km = 1.0;
+				if (speed < 10) vol30km = fadeCon(0, 0.0, 10, 1.0, su);
+				if (speed > 40) vol30km = fadeCon(40, 1.0, 60, 0.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2', vol30km, pit30km);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2');
+			}
+
+			//Run60km
+			if (speed > 40 && speed < 90 && !su.inTunnel()) {
+				var pit60km = fadeCon(60, 1.0, 90, 1.5, su);
+				var vol60km = 1.0;
+				if (speed < 50) vol60km = fadeCon(40, 0.0, 50, 1.0, su);
+				if (speed > 70) vol60km = fadeCon(70, 1.0, 90, 0.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2', vol60km, pit60km);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2');
+			}
+
+			//Run120km
+			if (speed > 70 && speed < 165 && !su.inTunnel()) {
+				var pit120km = fadeCon(60, 0.5, 165, 1.6, su);
+				var vol120km = 1.0;
+				if (speed < 80) vol120km = fadeCon(70, 0.0, 80, 1.0, su);
+				su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2', vol120km, pit120km);
+			} else {
+				su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2');
+			}
+
+		}
 		//Run60kmT
 		if (speed > 40 && speed < 90 && su.inTunnel()) {
 			var pit60kmT = fadeCon(60, 1.0, 90, 1.5, su);
@@ -260,16 +383,6 @@ PlayCompressor(su, CpName, CpStartName, CpEndName);
 			su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run60kmT3', vol60kmT, pit60kmT);
 		} else {
 			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60kmT3');
-		}
-
-		//Run120km
-		if (speed > 70 && speed < 165 && !su.inTunnel()) {
-			var pit120km = fadeCon(60, 0.5, 165, 1.6, su);
-			var vol120km = 1.0;
-			if (speed < 80) vol120km = fadeCon(70, 0.0, 80, 1.0, su);
-			su.playSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2', vol120km, pit120km);
-		} else {
-			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2');
 		}
 
 		//Run120kmT
@@ -282,21 +395,32 @@ PlayCompressor(su, CpName, CpStartName, CpEndName);
 			su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120kmT');
 		}
 
-	}
-
-	//全ての音を消す構文
-	else {	
+	} else {
+		//0kmの時、全ての音を消す構文
 		su.stopSound(soundAddress, '800BcOn');
 		su.stopSound(soundAddress, '800BcOff');
 
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_2');
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.201_Chopper.201_3');
 
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Point30km');
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Point60km');
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Point120km');
+
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run30km2');
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60km2');
-		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60kmT3');
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120km2');
+
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run60kmT3');
 		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Run120kmT');
+
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long30km');
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long60km');
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Long120km');
+
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge30km');
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge60km');
+		su.stopSound('sound_mhnlib', 'RTMLib.Run.Common.Bridge120km');
 	}
 }
 
